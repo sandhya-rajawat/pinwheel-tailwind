@@ -1,11 +1,12 @@
 <?php
-function openurl() {
-    if ($_SERVER['REQUEST_URI'] !== "/pinwheel_file/pinwheel-tailwind/index.php") {
-        header("Location: http://localhost/pinwheel_file/pinwheel-tailwind/index.php");
-        exit();
-    }
+  function get_url($file_name) {
+  $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+  $host = $_SERVER['HTTP_HOST'];
+  $path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
+
+  return "$protocol://$host$path/$file_name";
 }
 
-openurl();
+echo get_url('index.php');
 ?>
 
