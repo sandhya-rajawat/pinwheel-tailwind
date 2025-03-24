@@ -7,6 +7,5 @@
   return "$protocol://$host$path/$file_name";
 }
 
- get_url('index.php');
 ?>
 
