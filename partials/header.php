@@ -1,9 +1,6 @@
 
 <?php
-require_once 'function.php'; 
-
-$full_url = get_url('index.php'); 
-
+get_url('index.php'); 
 ?>
 
 <header class="header">
