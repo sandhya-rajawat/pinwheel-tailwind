@@ -38,7 +38,9 @@ get_url('index.php');
             id="nav-menu"
             class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5">
             <li class="nav-item">
-                <a href="http://localhost/pinwheel_file/pinwheel-tailwind/index.php" class="nav-link active">Home</a>
+            <a href="<?php
+get_url('index.php'); 
+?>" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
                 <a href="http://localhost/pinwheel_file/pinwheel-tailwind/about.php" class="nav-link">About</a>
