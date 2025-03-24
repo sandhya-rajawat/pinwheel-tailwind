@@ -13,6 +13,7 @@
 <!-- <script src="./tailwind.config.js"></script> -->
 
 <section class="section banner relative">
+
   <div class="container">
     <div class="row items-center">
       <div class="lg:col-6">

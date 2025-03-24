@@ -19,7 +19,7 @@
         <p>themefisher@gmail.com</p>
         <ul class="social-icons mt-4 lg:mt-6">
           <li>
-            <a href="#">
+            <a href="">
               <svg
                 width="19"
                 height="21"
