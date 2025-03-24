@@ -7,6 +7,6 @@
   return "$protocol://$host$path/$file_name";
 }
 
-echo get_url('index.php');
+ get_url('index.php');
 ?>
 
