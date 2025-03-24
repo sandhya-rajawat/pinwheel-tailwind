@@ -68,7 +68,9 @@
     <?php
     include_once './partials/header.php';
     include_once $view_blade;
+    include_once  $view_blade_about;
     include_once './partials/footer.php';
+  
     ?>
 </body>
 
