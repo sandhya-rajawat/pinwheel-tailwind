@@ -1,13 +1,13 @@
 
-<?php
-get_url('index.php'); 
-?>
+
 
 <header class="header">
     <nav class="navbar container">
         <!-- logo -->
         <div class="order-0">
-            <a href="http://localhost/pinwheel_file/pinwheel-tailwind/index.php">
+            <a href="<?php
+get_url('index.php'); 
+?>">
                 <img src="images/logo.svg" height="30" width="147" alt="logo" />
             </a>
         </div>
