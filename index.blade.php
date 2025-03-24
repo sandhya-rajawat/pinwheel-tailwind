@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href='./css/./main.css'>
-</head>
-<body>
- 
-
 <!-- Banner -->
-<!-- <script src="./tailwind.config.js"></script> -->
-
 <section class="section banner relative">
-
   <div class="container">
     <div class="row items-center">
       <div class="lg:col-6">
@@ -29,7 +15,7 @@
       <div class="lg:col-6">
         <img
           class="w-full object-contain"
-          src="./images/./banner-img.png"
+          src="images/banner-img.png"
           width="603"
           height="396"
           alt=""
@@ -487,7 +473,3 @@
     </div>
   </div>
 </section>
-
-
-</body>
-</html>
