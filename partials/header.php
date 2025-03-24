@@ -48,13 +48,19 @@ get_url('index.php');
 ?>" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="<?php
+ echo get_url('blog.php'); 
+?>" class="nav-link">Blog</a>
             </li>
             <li class="nav-item">
-                <a href="features.html" class="nav-link">Features</a>
+                <a href="<?php
+ echo get_url('features.php'); 
+?>" class="nav-link">Features</a>
             </li>
             <li class="nav-item">
-                <a href="how-it-works.html" class="nav-link">How It Works</a>
+            <a href="<?php
+ echo get_url('how-it-works.php'); 
+?>" class="nav-link">How It Works</a>
             </li>
             <li class="nav-item nav-dropdown group relative">
                 <span class="nav-link inline-flex items-center">
@@ -90,14 +96,18 @@ get_url('index.php');
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="<?php
+ echo get_url('contact.php'); 
+?>" class="nav-link">Contact</a>
             </li>
             <li class="nav-item mt-3.5 lg:hidden">
                 <a class="btn btn-white btn-sm border-border" href="signin.html">Sing Up Now</a>
             </li>
         </ul>
         <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
-            <a class="btn btn-white btn-sm" href="signin.html">Sing Up Now</a>
+            <a class="btn btn-white btn-sm" href="<?php
+ echo get_url('sign.php'); 
+?>">Sing Up Now</a>
         </div>
     </nav>
 </header>
