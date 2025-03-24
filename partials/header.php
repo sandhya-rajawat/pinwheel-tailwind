@@ -43,7 +43,9 @@ get_url('index.php');
 ?>" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
-                <a href="http://localhost/pinwheel_file/pinwheel-tailwind/about.php" class="nav-link">About</a>
+                <a href="<?php
+ echo get_url('about.php'); 
+?>" class="nav-link">About</a>
             </li>
             <li class="nav-item">
                 <a href="blog.html" class="nav-link">Blog</a>
