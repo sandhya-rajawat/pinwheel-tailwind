@@ -20,7 +20,7 @@ function db_connect() {
 
 function db_close($con) {
     if ($con) {
-        $con->close();
+        mysqli_close($con);
     }
 }
 
