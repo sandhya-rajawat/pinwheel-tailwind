@@ -2,8 +2,8 @@
 class Database {
     private $servername = 'localhost';
     private $username = 'root';
-    private $password = '';
-    private $database = 'pinwheel-db';
+    private $password = 's@ndhya1133';
+    private $database = 'pinwheel';
     private $con; 
 
     public function db_connect() {
