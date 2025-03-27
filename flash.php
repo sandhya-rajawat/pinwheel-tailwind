@@ -9,11 +9,11 @@ function render_flash() {
     if (isset($_SESSION['flash'])) {
         echo "<script>";
         foreach ($_SESSION['flash'] as $key => $message) {
-            echo "alert('$message');";  // ✅ JavaScript Alert for messages
+            echo "alert('$message');";  
         }
         echo "</script>";
 
-        unset($_SESSION['flash']); // Clear flash messages after displaying
+        unset($_SESSION['flash']);
     }
 }
 ?>
