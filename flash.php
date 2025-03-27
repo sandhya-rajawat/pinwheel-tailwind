@@ -1,19 +1,21 @@
 <?php
-session_start(); // Make sure session is started
+session_start();
 
 function session_flash($key, $message) {
+    if (!isset($_SESSION['flash'])) {
+        $_SESSION['flash'] = [];
+    }
     $_SESSION['flash'][$key] = $message;
 }
 
 function render_flash() {
     if (isset($_SESSION['flash'])) {
-        echo "<script>";
         foreach ($_SESSION['flash'] as $key => $message) {
-            echo "alert('$message');";  
+            if ($key === "success" || $key === "error") { 
+                echo "<script>alert('$message');</script>";  
+            }
         }
-        echo "</script>";
-
-        unset($_SESSION['flash']);
+        unset($_SESSION['flash']); 
     }
 }
 ?>

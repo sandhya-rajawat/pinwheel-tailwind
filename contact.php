@@ -61,5 +61,4 @@ $view_blade = "./contact.blade.php";
 
 include './layouts/default.php'; 
 
-render_flash();
 ?>
