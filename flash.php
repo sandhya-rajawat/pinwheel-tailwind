@@ -1,16 +1,19 @@
 <?php
-session_start(); 
-function session_flash($type, $message) {
-    $_SESSION['flash_messages'][] = ['message' => $message, 'type' => $type];
+session_start(); // Make sure session is started
+
+function session_flash($key, $message) {
+    $_SESSION['flash'][$key] = $message;
 }
+
 function render_flash() {
-    if (!empty($_SESSION['flash_messages'])) {
-        foreach ($_SESSION['flash_messages'] as $flash) {
-            $color = ($flash['type'] === 'success') ? 'green' : 'red';
-            echo "<p style='color: $color; font-weight: bold;'>" . $flash['message'] . "</p>";
-            echo "<script>alert('" . addslashes($flash['message']) . "');</script>"; 
+    if (isset($_SESSION['flash'])) {
+        echo "<script>";
+        foreach ($_SESSION['flash'] as $key => $message) {
+            echo "alert('$message');";  // ✅ JavaScript Alert for messages
         }
-        unset($_SESSION['flash_messages']); 
+        echo "</script>";
+
+        unset($_SESSION['flash']); // Clear flash messages after displaying
     }
 }
 ?>

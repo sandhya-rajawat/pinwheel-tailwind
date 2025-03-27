@@ -1,17 +1,16 @@
 <?php
-include './function.php';
-$view_blade = "./contact.blade.php";
-include './layouts/default.php';
-render_flash(); 
-if (isset($_POST['submit'])) {
-  
-    $name = trim($_POST["name"]);
-    $email = trim($_POST["email"]);
-    $reason = trim($_POST["reason"]);
-    $message = trim($_POST["message"]);
+include './function.php';  
 
-    // Validation rules
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+  
+    $name = trim(htmlspecialchars($_POST["name"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $reason = trim(htmlspecialchars($_POST["reason"]));
+    $message = trim(htmlspecialchars($_POST["message"]));
+
+
     $errors = [];
+
     if (empty($name)) {
         $errors[] = "Name is required.";
     }
@@ -26,27 +25,41 @@ if (isset($_POST['submit'])) {
     }
 
     if (empty($errors)) {
-        // db function call..............................
         $con = db_connect();
-        $stmt = $con->prepare("INSERT INTO detail (fullname, email, reason, message) VALUES (?, ?, ?, ?)");
-        
-        if ($stmt === false) {
-            die("Error in SQL query: " . $con->error);
-        }
 
-        $stmt->bind_param("ssss", $name, $email, $reason, $message);
-
-        if ($stmt->execute()) {
-            session_flash('success', 'Form submitted successfully!');
+        if ($con->connect_error) {
+            session_flash('error', 'Database connection error. Please try again later.');
         } else {
-            session_flash('error', 'Error saving your message. Please try again.');
+            $stmt = $con->prepare("INSERT INTO detail (fullname, email, reason, message) VALUES (?, ?, ?, ?)");
+            
+            if ($stmt) {
+                $stmt->bind_param("ssss", $name, $email, $reason, $message);
+
+                if ($stmt->execute()) {
+                    session_flash('success', 'Form submitted successfully!');
+                } else {
+                    session_flash('error', 'Error saving your message. Please try again.');
+                }
+
+                $stmt->close();
+            } else {
+                error_log("SQL Error: " . $con->error);
+                session_flash('error', 'An error occurred. Please try again later.');
+            }
+
+            $con->close();
         }
-          $stmt->close();
-   
     } else {
         foreach ($errors as $error) {
             session_flash('error', $error);
         }
     }
 }
+
+
+$view_blade = "./contact.blade.php";  
+
+include './layouts/default.php'; 
+
+render_flash();
 ?>
