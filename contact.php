@@ -2,27 +2,31 @@
 include './function.php';  
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-  
-    $name = trim(htmlspecialchars($_POST["name"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $reason = trim(htmlspecialchars($_POST["reason"]));
-    $message = trim(htmlspecialchars($_POST["message"]));
-
-
     $errors = [];
-
+    $name = trim(htmlspecialchars($_POST["name"]));
     if (empty($name)) {
         $errors[] = "Name is required.";
     }
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Valid email is required.";
     }
+    $reason = trim(htmlspecialchars($_POST["reason"]));
     if (empty($reason)) {
         $errors[] = "Reason cannot be empty.";
     }
+    $message = trim(htmlspecialchars($_POST["message"]));
     if (empty($message)) {
         $errors[] = "Message cannot be empty.";
     }
+
+
+  
+
+  
+  
+ 
+  
 
     if (empty($errors)) {
         $con = db_connect();
@@ -41,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                     session_flash('error', 'Error saving your message. Please try again.');
                 }
 
-                $stmt->close();
+                $stmt->close(); 
             } else {
                 error_log("SQL Error: " . $con->error);
                 session_flash('error', 'An error occurred. Please try again later.');
