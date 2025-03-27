@@ -1,6 +1,4 @@
 
-
-
 <header class="header">
     <nav class="navbar container">
         <!-- logo -->

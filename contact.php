@@ -1,13 +1,10 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 include './function.php';
 $view_blade = "./contact.blade.php";
 include './layouts/default.php';
-
-$con = db_connect();
-
+render_flash(); 
 if (isset($_POST['submit'])) {
+  
     $name = trim($_POST["name"]);
     $email = trim($_POST["email"]);
     $reason = trim($_POST["reason"]);
@@ -28,9 +25,9 @@ if (isset($_POST['submit'])) {
         $errors[] = "Message cannot be empty.";
     }
 
-    // If no errors, insert into database
     if (empty($errors)) {
-        // ✅ Correct SQL Query Using Placeholders
+        // db function call..............................
+        $con = db_connect();
         $stmt = $con->prepare("INSERT INTO detail (fullname, email, reason, message) VALUES (?, ?, ?, ?)");
         
         if ($stmt === false) {
@@ -40,16 +37,15 @@ if (isset($_POST['submit'])) {
         $stmt->bind_param("ssss", $name, $email, $reason, $message);
 
         if ($stmt->execute()) {
-            echo "<p style='color: green;'>Your message has been sent successfully!</p>";
+            session_flash('success', 'Form submitted successfully!');
         } else {
-            echo "<p style='color: red;'>Error saving your message. Please try again.</p>";
+            session_flash('error', 'Error saving your message. Please try again.');
         }
-
-        $stmt->close();
-        echo "<script>alert('Message Sent Successfully');</script>";
+          $stmt->close();
+   
     } else {
         foreach ($errors as $error) {
-            echo "<p style='color: red;'>$error</p>";
+            session_flash('error', $error);
         }
     }
 }
