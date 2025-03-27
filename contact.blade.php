@@ -70,9 +70,9 @@
         </div>
       </div>
       <div class="md:col-6 md:order-1">
-        <form class="lg:max-w-[484px]" action="#" method="POST">
+        <form class="lg:max-w-[484px]" action="./contact.php" method="POST">
           <div class="form-group mb-5">
-            <label class="form-label" for="name">Full Name</label>
+            <label class="form-label"  name='name'>Full Name</label>
             <input
               class="form-control"
               type="text"
@@ -81,7 +81,7 @@
             />
           </div>
           <div class="form-group mb-5">
-            <label class="form-label" for="eamil">Email Adrdess</label>
+            <label class="form-label"  name='email'>Email Adrdess</label>
             <input
               class="form-control"
               type="text"
@@ -90,7 +90,7 @@
             />
           </div>
           <div class="form-group mb-5">
-            <label class="form-label" for="reason">reason/purpose</label>
+            <label class="form-label"  name='reason'>reason/purpose</label>
             <select name="reason" id="reason" class="form-select" required>
               <option value="">Select reason/purpose</option>
               <option value="investment plane">Investment Plan</option>
@@ -99,7 +99,7 @@
             </select>
           </div>
           <div class="form-group mb-5">
-            <label class="form-label" for="message">Message Here</label>
+            <label class="form-label" name='message'>Message Here</label>
             <textarea
               class="form-control h-[150px]"
               id="message"
@@ -111,6 +111,7 @@
             class="btn btn-primary block w-full"
             type="submit"
             value="Send Message"
+            name='submit'
           />
         </form>
       </div>

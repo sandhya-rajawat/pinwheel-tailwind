@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 function db_connect() {
     $servername = 'localhost';
     $username = 'root';
@@ -24,9 +21,9 @@ function db_close($con) {
     }
 }
 
-$con = db_connect();
-echo "Connected successfully!";
+// $con = db_connect();
+// echo "Connected successfully!";
 
 
-db_close($con);
+// db_close($con);
 ?>
