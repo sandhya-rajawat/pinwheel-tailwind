@@ -70,50 +70,61 @@
         </div>
       </div>
       <div class="md:col-6 md:order-1">
-        <form class="lg:max-w-[484px]" action="./contact.php" method="POST">
-          <div class="form-group mb-5">
-            <label class="form-label"  name='name'>Full Name</label>
-            <input
-              class="form-control"
-              type="text"
-              id="name"
-              placeholder="Your Full Name"
-            />
-          </div>
-          <div class="form-group mb-5">
-            <label class="form-label"  name='email'>Email Adrdess</label>
-            <input
-              class="form-control"
-              type="text"
-              id="email"
-              placeholder="Your  Email Address"
-            />
-          </div>
-          <div class="form-group mb-5">
-            <label class="form-label"  name='reason'>reason/purpose</label>
-            <select name="reason" id="reason" class="form-select" required>
-              <option value="">Select reason/purpose</option>
-              <option value="investment plane">Investment Plan</option>
-              <option value="investment plane-2">Investment Plan 2</option>
-              <option value="investment plane-3">Investment Plan 3</option>
-            </select>
-          </div>
-          <div class="form-group mb-5">
-            <label class="form-label" name='message'>Message Here</label>
-            <textarea
-              class="form-control h-[150px]"
-              id="message"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </div>
-          <input
-            class="btn btn-primary block w-full"
-            type="submit"
-            value="Send Message"
-            name='submit'
-          />
-        </form>
+      <form class="lg:max-w-[484px]" action="./contact.php" method="POST">
+  <div class="form-group mb-5">
+    <label class="form-label" for="name">Full Name</label>
+    <input
+      class="form-control"
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Your Full Name"
+      required
+    />
+  </div>
+
+  <div class="form-group mb-5">
+    <label class="form-label" for="email">Email Address</label>
+    <input
+      class="form-control"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your Email Address"
+      required
+    />
+  </div>
+
+  <div class="form-group mb-5">
+    <label class="form-label" for="reason">Reason/Purpose</label>
+    <select name="reason" id="reason" class="form-select" required>
+      <option value="">Select reason/purpose</option>
+      <option value="investment plan">Investment Plan</option>
+      <option value="investment plan-2">Investment Plan 2</option>
+      <option value="investment plan-3">Investment Plan 3</option>
+    </select>
+  </div>
+
+  <div class="form-group mb-5">
+    <label class="form-label" for="message">Message Here</label>
+    <textarea
+      class="form-control h-[150px]"
+      id="message"
+      name="message"
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
+  </div>
+
+  <input
+    class="btn btn-primary block w-full"
+    type="submit"
+    value="Send Message"
+    name="submit"
+  />
+</form>
+
       </div>
     </div>
   </div>
