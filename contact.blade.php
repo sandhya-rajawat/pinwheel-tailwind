@@ -79,7 +79,7 @@
       id="name"
       name="name"
       placeholder="Your Full Name"
-      required
+ 
     />
     <!-- error show  -->
     <?php if (isset($errors['name'])): ?>
@@ -96,7 +96,7 @@
       id="email"
       name="email"
       placeholder="Your Email Address"
-      required
+  
     />
     <?php if (isset($errors['email'])): ?>
         <p class="error"><?= $errors['email'] ?></p>
@@ -105,7 +105,7 @@
 
   <div class="form-group mb-5">
     <label class="form-label" for="reason">Reason/Purpose</label>
-    <select name="reason" id="reason" class="form-select" required>
+    <select name="reason" id="reason" class="form-select" >
       <option value="">Select reason/purpose</option>
       <option value="investment plan">Investment Plan</option>
       <option value="investment plan-2">Investment Plan 2</option>
@@ -124,7 +124,7 @@
       name="message"
       cols="30"
       rows="10"
-      required
+
     ></textarea>
     
   </div>
