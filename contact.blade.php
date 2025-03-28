@@ -81,6 +81,11 @@
       placeholder="Your Full Name"
       required
     />
+    <!-- error show  -->
+    <?php if (isset($errors['name'])): ?>
+        <p class="error"><?= $errors['name'] ?></p>
+    <?php endif; ?>
+
   </div>
 
   <div class="form-group mb-5">
@@ -93,6 +98,9 @@
       placeholder="Your Email Address"
       required
     />
+    <?php if (isset($errors['email'])): ?>
+        <p class="error"><?= $errors['email'] ?></p>
+    <?php endif; ?>
   </div>
 
   <div class="form-group mb-5">
@@ -103,6 +111,9 @@
       <option value="investment plan-2">Investment Plan 2</option>
       <option value="investment plan-3">Investment Plan 3</option>
     </select>
+    <?php if (isset($errors['reason'])): ?>
+        <p class="error"><?= $errors['reason'] ?></p>
+    <?php endif; ?>
   </div>
 
   <div class="form-group mb-5">
@@ -115,6 +126,7 @@
       rows="10"
       required
     ></textarea>
+    
   </div>
 
   <input
@@ -123,9 +135,19 @@
     value="Send Message"
     name="submit"
   />
+  <?php if (isset($errors['message'])): ?>
+        <p class="error"><?= $errors['message'] ?></p>
+    <?php endif; ?>
 </form>
 
       </div>
     </div>
   </div>
 </section>
+<style>
+    .error {
+        color:red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
