@@ -19,16 +19,24 @@
             >
           </div>
 
-          <form action="#">
-            <div class="form-group">
-              <label for="email" class="form-label">Email Adrdess</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                placeholder="Your Email Address"
-              />
-            </div>
+          <form action="./sign.php" method="POST">
+
+          
+  <div class="form-group mb-5">
+    <label class="form-label" for="email">Email Address</label>
+    <input
+      class="form-control"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your Email Address"
+  
+    />
+    <?php if (isset($errors['email'])): ?>
+        <p class="error"><?= $errors['email'] ?></p>
+    <?php endif; ?>
+  </div>
+            
             <div class="form-group mt-4">
               <label for="password" class="form-label">Password</label>
               <input
@@ -36,16 +44,22 @@
                 id="password"
                 class="form-control"
                 placeholder="Your Password"
+                name="password"
               />
+              <?php if (isset($errors['password'])): ?>
+        <p class="error"><?= $errors['password'] ?></p>
+    <?php endif; ?>
             </div>
+
             <input
               class="btn btn-primary mt-10 block w-full"
               type="submit"
               value="Sign In"
+              name="submit"
             />
             <p class="mt-6 text-center">
               Can't <span class="text-dark" href="#">log in</span>?
-              <a class="text-dark" href="signup.html">Sign up</a> for create
+              <a class="text-dark" href="./signup.php">Sign up</a> for create
               account
             </p>
           </form>
@@ -102,3 +116,10 @@
     </div>
   </div>
 </section>
+<style>
+    .error {
+        color:red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
