@@ -104,7 +104,7 @@ get_url('index.php');
         </ul>
         <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
             <a class="btn btn-white btn-sm" href="<?php
- echo get_url('sign.php'); 
+ echo get_url('signin.php'); 
 ?>">Sing Up Now</a>
         </div>
     </nav>

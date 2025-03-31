@@ -116,7 +116,7 @@
     </div>
   </div>
 </section>
-<style>
+  <style>
     .error {
         color:red;
         font-size: 14px;
