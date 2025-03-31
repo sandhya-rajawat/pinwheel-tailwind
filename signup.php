@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         if ($con->connect_error) {
             die(" Database connection failed: " . $con->connect_error);
         } else {
-            // 🔍 **Check if Email Already Exists**
+     
             $check_email_query = "SELECT id FROM user WHERE email = ?";
             $stmt_check = $con->prepare($check_email_query);
             $stmt_check->bind_param("s", $email);
@@ -39,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             
             $stmt_check->close(); // Close email check statement
 
-            // 🔍 **Check if Password Already Exists (Using password_verify)**
             $password_query = "SELECT password FROM user";
             $stmt_password = $con->prepare($password_query);
             $stmt_password->execute();
