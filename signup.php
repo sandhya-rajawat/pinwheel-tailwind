@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 $errors['password'] = "This password is already registered. Try another one.";
             }
 
-            // ✅ **Proceed with Registration Only if No Errors Exist**
+          
             if (empty($errors)) {
                 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
