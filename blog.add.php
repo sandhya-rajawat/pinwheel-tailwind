@@ -6,8 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $description = trim($_POST['description']);
     $status = trim($_POST['status']);
     $user_id = $_SESSION['user_id'];
-    $created_at = date("Y-m-d H:i:s");
-    $updated_at = date("Y-m-d H:i:s");
 
     //  Thumbnail Upload
       $thumbnail = null;
@@ -51,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     // Insert into database
     if (empty($errors)) {
         $con = db_connect();
-        $stmt = $con->prepare("INSERT INTO blogs (title, thumbnail, description, status, user_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssiss", $title, $thumbnail, $description, $status, $user_id, $created_at, $updated_at);
+        $stmt = $con->prepare("INSERT INTO blogs (title, thumbnail, description, status, user_id) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssi", $title, $thumbnail, $description, $status, $user_id);
 
         if ($stmt->execute()) {
             header("Location: signin.php"); // Redirect to signin page
