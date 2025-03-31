@@ -132,8 +132,8 @@
               <a class="tag" href="#">Development</a>
             </div>
             <h3 class="h4 card-title">
-              <a href="blog-single.html">
-                The Ultimate Guide to Redirects Explained
+              <a href="./blog-single.php">
+                The Ultimate Guide to Redirects Explained.
               </a>
             </h3>
             <p>

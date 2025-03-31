@@ -19,7 +19,7 @@
             >
           </div>
 
-          <form action="./sign.php" method="POST">
+          <form action="./signin.php" method="POST">
 
           
   <div class="form-group mb-5">

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
      header("Location: index.php");
         exit();
     } else {
-        echo "<script>alert('Invalid email or password. Please try again!');</script>";
+        session_flash('error', 'Invalid email or password. Please try again!');
     }
 
     $stmt->close();
