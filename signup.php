@@ -1,11 +1,8 @@
 <?php
-
 include './function.php';  
-
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-
     $name = trim(htmlspecialchars($_POST["name"]));
     if (empty($name)) {
         $errors['name'] = " Name is required.";
@@ -23,39 +20,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $errors['password'] = " Password must be at least 8 characters.";
     }
 
- 
     if (empty($errors)) {
-        $con = db_connect();  
+        $con = db_connect();
 
         if ($con->connect_error) {
             die(" Database connection failed: " . $con->connect_error);
         } else {
-        
-            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+            // 🔍 **Check if Email Already Exists**
+            $check_email_query = "SELECT id FROM user WHERE email = ?";
+            $stmt_check = $con->prepare($check_email_query);
+            $stmt_check->bind_param("s", $email);
+            $stmt_check->execute();
+            $stmt_check->store_result();
 
-            // 🔹 **Correct SQL Query**
-            $stmt = $con->prepare("INSERT INTO user (fullname, email, password) VALUES (?, ?, ?)");
+            if ($stmt_check->num_rows > 0) {
+                $errors['email'] = "This email is already registered. Try another one.";
+            } 
             
-            if ($stmt) {
-                $stmt->bind_param("sss", $name, $email, $hashed_password);
-                if ($stmt->execute()) {
-                    session_flash('success', 'Registration successful!');
-                   
-                } else {
-                    session_flash('error', ' Error saving your data. Try again.');
+            $stmt_check->close(); // Close email check statement
+
+            // 🔍 **Check if Password Already Exists (Using password_verify)**
+            $password_query = "SELECT password FROM user";
+            $stmt_password = $con->prepare($password_query);
+            $stmt_password->execute();
+            $result = $stmt_password->get_result();
+
+            $password_exists = false;
+            while ($row = $result->fetch_assoc()) {
+                if (password_verify($password, $row['password'])) {
+                    $password_exists = true;
+                    break;
                 }
-                $stmt->close();
-            } else {
-                error_log("SQL Error: " . $con->error);
-                session_flash('error', 'An error occurred. Please try again later.');
             }
-            $con->close();
+            $stmt_password->close(); // Close password check statement
+
+            if ($password_exists) {
+                $errors['password'] = "This password is already registered. Try another one.";
+            }
+
+            // ✅ **Proceed with Registration Only if No Errors Exist**
+            if (empty($errors)) {
+                $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+                $stmt = $con->prepare("INSERT INTO user (fullname, email, password) VALUES (?, ?, ?)");
+                if ($stmt) {
+                    $stmt->bind_param("sss", $name, $email, $hashed_password);
+                    if ($stmt->execute()) {
+                        session_flash('success', 'Registration successful!');
+                    } else {
+                        session_flash('error', ' Error saving your data. Try again.');
+                    }
+                    $stmt->close();
+                } else {
+                    error_log("SQL Error: " . $con->error);
+                    session_flash('error', 'An error occurred. Please try again later.');
+                }
+            }
+
+            $con->close(); // Close database connection
         }
     }
 }
 
-
 $view_blade = "./signup.blade.php";  
 include './layouts/default.php'; 
-
 ?>
