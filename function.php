@@ -10,7 +10,10 @@ function get_url($file_name) {
   $path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
   return "$protocol://$host$path/$file_name";
 }
-
+function redirect($url) {
+  header("Location: $url");  
+  exit(); 
+}
 
 
 ?>
