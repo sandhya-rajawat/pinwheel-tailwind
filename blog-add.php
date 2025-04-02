@@ -4,6 +4,7 @@ include './function.php';
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     redirect('signin.php');  
+    echo "done";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
