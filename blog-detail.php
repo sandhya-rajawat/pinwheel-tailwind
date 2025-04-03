@@ -13,13 +13,15 @@ if (isset($_GET['id'])) {
         $blog = $result->fetch_assoc();
     } else {
         session_flash('error', 'Blog Not Found!!');
-     
+        header("Location: blog.php");
+        exit;
     }
     
     $stmt->close();
 } else {
     session_flash('error', 'Invalid Request');
-  
+    header("Location: blog.php");
+    exit;
 }
 
 $conn->close();
@@ -27,7 +29,3 @@ $conn->close();
 $view_blade = './blog-detail.blade.php';
 include './layouts/default.php';
 ?>
-
-
-
-
