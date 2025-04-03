@@ -1,8 +1,5 @@
 <?php
 include './function.php';
-
-
-
 if (isset($_GET['id'])) {
     $blog_id = $_GET['id'];
     $conn = db_connect();
