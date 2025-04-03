@@ -2,7 +2,6 @@
 include './function.php';
 
 
-$con = db_connect();
 
 
 if (isset($_GET['id'])) {
@@ -85,7 +84,13 @@ if (empty($errors)) {
 
 
 
-
 $view_blade = './blog-detail.blade.php';
 include './layouts/default.php';
 ?>
+$view_blade = './blog-detail.blade.php';
+include './layouts/default.php';
+
+
+
+?>
+
