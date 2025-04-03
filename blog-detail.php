@@ -2,6 +2,7 @@
 include './function.php';
 
 
+
 if (isset($_GET['id'])) {
     $blog_id = $_GET['id'];
     $conn = db_connect();
@@ -26,3 +27,10 @@ $conn->close();
 $view_blade = './blog-detail.blade.php';
 include './layouts/default.php';
 ?>
+$view_blade = './blog-detail.blade.php';
+include './layouts/default.php';
+
+
+
+?>
+
