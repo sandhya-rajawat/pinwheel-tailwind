@@ -103,7 +103,7 @@ width: 360%;
                   </div>
                   <!-- Title -->
                   <h3 class="h4 card-title">
-                    <a href="blog-single.html"><?php echo $blog['title']; ?></a>
+                    <a href="./blog-detail.php"><?php echo $blog['title']; ?></a>
                   </h3>
                   <p class="text-lg text-gray-700"><?php echo $blog['description']; ?></p>
                   <div class="card-footer mt-6 flex space-x-4">

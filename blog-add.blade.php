@@ -8,6 +8,7 @@
   src="images/floating-bubble-2.svg"
   alt=""
 />
+
 <img
   class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]"
   src="images/floating-bubble-3.svg"
