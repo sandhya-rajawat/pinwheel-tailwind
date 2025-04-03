@@ -1,18 +1,12 @@
 <!-- floating assets -->
 
 <style>
-
-    #image{
-    
+#image{
 width: 360%;   
-
-    }
+}
     .card {
    height: 50vh;
-  
- 
-      margin-right: 50px;
-     
+   margin-right: 50px;
 }
     </style>
 <img
@@ -76,21 +70,12 @@ width: 360%;
     <section class="section pt-0">
        <!-- <div class="container"> -->
        <div class="container mx-auto max-w-screen-xl px-4">
-
-        <!-- Flex container for all blog posts -->
+  <!-- Flex container for all blog posts -->
         <div class="featured-posts flex flex-wrap gap-8 ">
-      
-
-     
-      
-
-
-
 <?php
         foreach ($blogs as $blog){
 ?>
-        
-              <div class="mb-8  lg:w-1/4  md:col-6 ">
+        <div class="mb-8  lg:w-1/4  md:col-6 ">
               <div class="card">
               <!-- <div class="card h-10px"> -->
                 <!-- Image -->                
@@ -103,9 +88,14 @@ width: 360%;
                   </div>
                   <!-- Title -->
                   <h3 class="h4 card-title">
-                    <a href="./blog-detail.php"><?php echo $blog['title']; ?></a>
+           
+              <a href="blog-detail.php?id=<?= $blog['id']; ?>">
+               <?= $blog['title']; ?>
+              </a>
+  
                   </h3>
-                  <p class="text-lg text-gray-700"><?php echo $blog['description']; ?></p>
+                  <p class="text-lg text-gray-700"><?php echo strlen($blog['description']) > 50 ? substr($blog['description'], 0, 70) . ".." : $blog['description'] ?>
+                </p>
                   <div class="card-footer mt-6 flex space-x-4">
                     <span class="inline-flex items-center text-xs text-[#666]">
                       <svg class="mr-1.5" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
