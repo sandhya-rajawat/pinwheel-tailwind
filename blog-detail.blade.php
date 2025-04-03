@@ -6,6 +6,7 @@
 <!--  blog-detail -->
 
 <section class="section blog-single">
+ 
   <div class="container">
     <div class="row justify-center">
       <div class="lg:col-10">
@@ -37,23 +38,23 @@
         </div>
 
     
-        <form class="comment-form" action="#" method="POST">
+        <form class="comment-form" action="./blog-detail.php" method="POST">
           <p class="mb-4">LEAVE A REPLY</p>
           <div class="form-group">
-            <textarea cols="30" rows="5"></textarea>
+            <textarea cols="30" rows="5"  name='message'></textarea>
           </div>
           <div class="row mb-8">
             <div class="form-group mt-8 md:col-6 lg:col-4">
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" name='name' />
             </div>
             <div class="form-group mt-8 md:col-6 lg:col-4">
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name='email' />
             </div>
             <div class="form-group mt-8 md:col-6 lg:col-4">
-              <input type="text" placeholder="Website" />
+              <input type="text" placeholder="Website" name='website' />
             </div>
           </div>
-          <input type="submit" class="btn btn-primary mt-8 min-w-[189px] cursor-pointer" value="Post Comment" />
+          <input type="submit" class="btn btn-primary mt-8 min-w-[189px] cursor-pointer" value="Post Comment" name='submit' />
         </form>
       </div>
     </div>
