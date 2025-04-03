@@ -4,7 +4,7 @@
 <img class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]" src="images/floating-bubble-3.svg" alt="" />
 
 <!-- blog-detail.blade............................. -->
-<?php if (!empty($blog)) { ?>
+
 <section class="section blog-single">
   <div class="container">
     <div class="row justify-center">
@@ -60,7 +60,5 @@
   </div>
 </section>
 
-<?php } else { ?>
-  <p class="text-center text-red-500 text-xl">Blog Not Found!</p>
-<?php } ?>
+
 <!-- ./end blog-single -->
