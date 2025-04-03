@@ -1,9 +1,10 @@
 <?php
 include './function.php';
-$conn = db_connect();
+
 
 if (isset($_GET['id'])) {
     $blog_id = $_GET['id'];
+    $conn = db_connect();
     $stmt = $conn->prepare("SELECT * FROM blogs WHERE id = ?");
     $stmt->bind_param("i", $blog_id);
     $stmt->execute();
@@ -16,14 +17,10 @@ if (isset($_GET['id'])) {
         header("Location: blog.php");
         exit;
     }
-    
-    $stmt->close();
-} else {
-    session_flash('error', 'Invalid Request');
-    header("Location: blog.php");
-    exit;
-}
-
+ 
+} 
+   
+$stmt->close();
 $conn->close();
 
 $view_blade = './blog-detail.blade.php';
