@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
 
   if ($result->num_rows > 0) {
       $blog = $result->fetch_assoc();
+      
   } else {
       session_flash('error', 'Blog Not Found!!');
      
