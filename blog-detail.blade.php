@@ -6,8 +6,7 @@
 <!--  blog-detail -->
 
 <section class="section blog-single">
- 
-  <div class="container">
+ <div class="container">
     <div class="row justify-center">
       <div class="lg:col-10">
         <img class="rounded-xl" src="./uploads/<?php echo($blog['thumbnail']); ?>" alt="Blog Image" />
