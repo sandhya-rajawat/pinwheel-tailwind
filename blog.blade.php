@@ -94,7 +94,7 @@ width: 360%;
               </a>
   
                   </h3>
-                  <p class="text-lg text-gray-700"><?php echo strlen($blog['description']) > 50 ? substr($blog['description'], 0, 70) . ".." : $blog['description'] ?>
+                  <p class="text-lg text-gray-700"><?php echo strlen($blog['description']) > 50 ? substr($blog['description'], 0, 70) . "..." : $blog['description'] ?>
                 </p>
                   <div class="card-footer mt-6 flex space-x-4">
                     <span class="inline-flex items-center text-xs text-[#666]">
