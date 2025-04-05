@@ -3,7 +3,6 @@ include './function.php';
 $con = db_connect();
 
 $errors = [];
-
 $blog = null;
 
 // Fetch blog by ID
@@ -25,10 +24,6 @@ if (isset($_GET['id'])) {
 
 
 // Handle form submission
-
-  
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
   $name = trim(htmlspecialchars($_POST["name"]));
   $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
@@ -75,7 +70,6 @@ if ($blog) {
     $comment_stmt->execute();
     $comment_result = $comment_stmt->get_result();
     $comments = $comment_result->fetch_all(MYSQLI_ASSOC);
-  
     $comment_stmt->close();
 }
 
