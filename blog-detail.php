@@ -3,7 +3,7 @@ include './function.php';
 $con = db_connect();
 
 $errors = [];
-$formData = [];
+
 $blog = null;
 
 // Fetch blog by ID
