@@ -98,6 +98,7 @@
         <h2>We started with one single goal Empower entrepreneurs</h2>
       </div>
     </div>
+
     <div class="row mt-2.5">
       <div class="md:col-6">
         <div class="relative mt-8">
@@ -140,109 +141,49 @@
 </section>
 <!-- End Gallery -->
 
-<!-- Works -->
-<section class="section">
-  <div class="container">
-    <div class="row items-center justify-between">
-      <div class="md:col-5">
-        <h2 class="text-center md:text-left">
-          The six core work <br />
-          drive everything do
-        </h2>
+<!-- Works............................................................. -->
+<?php if (!empty($teams_blog)) { ?>
+  <section class="section">
+    <div class="container">
+      <div class="row items-center justify-between">
+        <div class="md:col-5">
+          <h2 class="text-center md:text-left">
+            The core work <br />
+            drive everything we do
+          </h2>
+        </div>
+        <div class="mt-6 text-center md:col-3 md:mt-0 md:text-right">
+          <a class="btn btn-primary" href="#">Download The Theme</a>
+        </div>
       </div>
-      <div class="mt-6 text-center md:col-3 md:mt-0 md:text-right">
-        <a class="btn btn-primary" href="#">Download The Theme</a>
+      <div class="row mt-14">
+        <?php foreach ($teams_blog as $item): ?>
+          <div class="mb-8 sm:col-6 lg:col-4">
+            <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+              <div class="gradient-number relative inline-block">
+                <span class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <?= htmlspecialchars($item['number']) ?>
+                </span>
+                <img src="images/gradient-number-bg.svg" alt="" />
+              </div>
+              <h4 class="my-6"><?= htmlspecialchars($item['title']) ?></h4>
+              <p>  <?= strlen($item['description']) > 100 ? htmlspecialchars(substr($item['description'], 0, 100)) . "..." : htmlspecialchars($item['description']) ?>
+             </p>
+             <?= date("jS M, Y" , strtotime($item['created_at'])); ?>
+             <?= date("g:i A", strtotime($item['updated_at'])); ?>
+        </p>
+
+            </div>
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
-    <div class="row mt-14">
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
-          <div class="gradient-number relative inline-block">
-            <span
-              class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">01</span>
-            <img src="images/gradient-number-bg.svg" alt="" />
-          </div>
-          <h4 class="my-6">Accessibility</h4>
-          <p>
-            Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec
-            velit neque, autor sit amet aliuam vel
-          </p>
-        </div>
-      </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
-          <div class="gradient-number relative inline-block">
-            <span
-              class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">02</span>
-            <img src="images/gradient-number-bg.svg" alt="" />
-          </div>
-          <h4 class="my-6">Empowerement</h4>
-          <p>
-            Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec
-            velit neque, autor sit amet aliuam vel
-          </p>
-        </div>
-      </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
-          <div class="gradient-number relative inline-block">
-            <span
-              class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">03</span>
-            <img src="images/gradient-number-bg.svg" alt="" />
-          </div>
-          <h4 class="my-6">Innovation</h4>
-          <p>
-            Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec
-            velit neque, autor sit amet aliuam vel
-          </p>
-        </div>
-      </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
-          <div class="gradient-number relative inline-block">
-            <span
-              class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">04</span>
-            <img src="images/gradient-number-bg.svg" alt="" />
-          </div>
-          <h4 class="my-6">Excellence</h4>
-          <p>
-            Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec
-            velit neque, autor sit amet aliuam vel
-          </p>
-        </div>
-      </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
-          <div class="gradient-number relative inline-block">
-            <span
-              class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">05</span>
-            <img src="images/gradient-number-bg.svg" alt="" />
-          </div>
-          <h4 class="my-6">Team work</h4>
-          <p>
-            Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec
-            velit neque, autor sit amet aliuam vel
-          </p>
-        </div>
-      </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
-          <div class="gradient-number relative inline-block">
-            <span
-              class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">06</span>
-            <img src="images/gradient-number-bg.svg" alt="" />
-          </div>
-          <h4 class="my-6">Responsibility</h4>
-          <p>
-            Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec
-            velit neque, autor sit amet aliuam ve
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ./end Works -->
+  </section>
+<?php } else { ?>
+  <p class="text-center text-gray-500 py-10">No team rules found 😥</p>
+<?php } ?>
+
+<!-- ./end Works,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
 
 <!-- Members -->
 <?php if (!empty($teams)) { ?>

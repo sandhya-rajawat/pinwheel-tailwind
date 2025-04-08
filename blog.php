@@ -1,8 +1,10 @@
 <?php
 
 include './function.php';
-$sql = "SELECT * FROM blogs";
+
 $con = db_connect();
+$sql = "SELECT * FROM blogs";
+
 $result = $con->query($sql);
 if ($result->num_rows > 0) {
   $blogs = $result->fetch_all(MYSQLI_ASSOC);

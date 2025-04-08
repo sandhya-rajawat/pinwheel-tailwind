@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="page-hero-content mx-auto max-w-[768px] text-center">
-      <h1 class="mb-5 mt-8">Add New Team Member</h1>
+      <h1 class="mb-5 mt-8">Add New core work</h1>
     </div>
   </div>
 </section>
@@ -38,59 +38,46 @@
   <div class="container flex flex-col items-center justify-center">
     <!-- Form Section -->
     <div class="md:col-6 md:order-1">
-      <form class="lg:max-w-[484px] w-full" action="./about-teams.php" method="POST" enctype="multipart/form-data">
+      <form class="lg:max-w-[484px] w-full" action="./about-info.php" method="POST" enctype="multipart/form-data">
         <!-- name Input -->
-        <div class="form-group mb-5">
-          <label class="form-label" for="name">Name</label>
+      <div class="form-group mb-5">
+          <label class="form-label" for="number">Number</label>
           <input
             class="form-control w-full"
             type="text"
             id="name"
-            name="name"
-            placeholder="Enter Your Name"
+            name="number"
+            placeholder="Enter Your number"
             required />
         </div>
-
-        <!-- photo Input -->
         <div class="form-group mb-5">
-          <label class="form-label" for="photo">Photo </label>
+          <label class="form-label" for="title">Title</label>
           <input
-            type="file"
-            name="photo"
-            accept="image/jpeg, image/png, image/gif"
             class="form-control w-full"
-            id="photo"
+            type="text"
+            id="name"
+            name="title"
+            placeholder="Enter Your title"
             required />
         </div>
-
         <!-- Designation input -->
 
         <div class="form-group mb-5">
-          <label class="form-label" for="designation">Designation</label>
+          <label class="form-label" for="discription">Discription</label>
           <input
             class="form-control w-full"
             type="text"
             id="name"
-            name="designation"
-            placeholder="Enter Your designation"
+            name="discription"
+            placeholder="Enter Your discription"
             required />
         </div>
-        <!--sorting  -->
-        <div class="form-group mb-5">
-          <label class="form-label" for="sorting">Sorting</label>
-          <input
-            class="form-control w-full"
-            type="text"
-            id="name"
-            name="sorting"
-            placeholder="Enter Your sorting"
-            required />
-        </div>
+      
         <!-- Submit Button -->
         <input
           class="btn btn-primary block w-full"
           type="submit"
-          value="Add Team Member"
+          value="Add core work"
           name="submit" />
       </form>
     </div>
