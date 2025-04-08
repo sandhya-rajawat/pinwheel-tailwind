@@ -18,16 +18,14 @@
           src="images/banner-img.png"
           width="603"
           height="396"
-          alt=""
-        />
+          alt="" />
       </div>
     </div>
   </div>
   <img
     class="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[30%]"
     src="images/banner-shape.svg"
-    alt=""
-  />
+    alt="" />
 </section>
 <!-- ./end Banner -->
 
@@ -36,8 +34,7 @@
   <img
     class="absolute left-0 top-0 -z-[1] -translate-y-1/2"
     src="images/icons/feature-shape.svg"
-    alt=""
-  />
+    alt="" />
   <div class="container">
     <div class="row justify-between text-center lg:text-start">
       <div class="lg:col-5">
@@ -51,11 +48,9 @@
       </div>
     </div>
     <div
-      class="key-feature-grid mt-10 grid grid-cols-2 gap-7 md:grid-cols-3 xl:grid-cols-4"
-    >
+      class="key-feature-grid mt-10 grid grid-cols-2 gap-7 md:grid-cols-3 xl:grid-cols-4">
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Live Caption</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -64,13 +59,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-1.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Smart Reply</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -79,13 +72,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-2.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Sound Amplifier</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -94,13 +85,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-3.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Gesture Navigation</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -109,13 +98,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-4.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Dark Theme</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -124,13 +111,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-5.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Privacy Controls</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -139,13 +124,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-6.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Location Controls</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -154,13 +137,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-7.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Security Updates</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -169,13 +150,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-8.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Focus Mode</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -184,13 +163,11 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-9.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
       <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg"
-      >
+        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
         <div>
           <h3 class="h4 text-xl lg:text-2xl">Family Link</h3>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
@@ -199,8 +176,7 @@
           <img
             class="objec-contain"
             src="images/icons/feature-icon-10.svg"
-            alt=""
-          />
+            alt="" />
         </span>
       </div>
     </div>
@@ -217,8 +193,7 @@
           <div class="tab-content-panel active" data-tab-panel="0">
             <img
               class="w-full object-contain"
-              src="images/sells-by-country.png"
-            />
+              src="images/sells-by-country.png" />
           </div>
           <div class="tab-content-panel" data-tab-panel="1">
             <img class="w-full object-contain" src="images/collaboration.png" />
@@ -226,8 +201,7 @@
           <div class="tab-content-panel" data-tab-panel="2">
             <img
               class="w-full object-contain"
-              src="images/sells-by-country.png"
-            />
+              src="images/sells-by-country.png" />
           </div>
         </div>
       </div>
@@ -265,8 +239,7 @@
           <img
             class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
             src="images/shape.svg"
-            alt=""
-          />
+            alt="" />
         </div>
       </div>
       <div class="mt-6 lg:col-5 lg:mt-0">
@@ -284,24 +257,21 @@
               <img
                 class="mr-3"
                 src="images/icons/checkmark-circle.svg"
-                alt=""
-              />
+                alt="" />
               Supporting more than 119 country world
             </li>
             <li class="mb-2 flex items-center rounded px-4">
               <img
                 class="mr-3"
                 src="images/icons/checkmark-circle.svg"
-                alt=""
-              />
+                alt="" />
               Open transaction with more than currencies
             </li>
             <li class="flex items-center rounded px-4">
               <img
                 class="mr-3"
                 src="images/icons/checkmark-circle.svg"
-                alt=""
-              />
+                alt="" />
               Customer Service with 79 languages
             </li>
           </ul>
@@ -315,26 +285,22 @@
             <img
               class="w-full object-contain"
               src="images/intro-thumbnail.png"
-              alt=""
-            />
+              alt="" />
             <button class="video-play-btn">
               <img src="images/icons/play-icon.svg" alt="" />
             </button>
           </div>
           <div
-            class="video-player absolute left-0 top-0 z-10 hidden h-full w-full"
-          >
+            class="video-player absolute left-0 top-0 z-10 hidden h-full w-full">
             <iframe
               class="h-full w-full"
               allowfullscreen=""
-              src="https://www.youtube.com/embed/g3-VxLQO7do?autoplay=1"
-            ></iframe>
+              src="https://www.youtube.com/embed/g3-VxLQO7do?autoplay=1"></iframe>
           </div>
           <img
             class="intro-shape absolute bottom-0 right-0 -z-[1]"
             src="images/shape.svg"
-            alt=""
-          />
+            alt="" />
         </div>
       </div>
       <div class="mt-6 lg:col-5 lg:order-1 lg:mt-0">
@@ -383,8 +349,7 @@
                   experiences & engage your users. We build .
                 </p>
                 <div
-                  class="review-rating mt-6 flex items-center justify-center space-x-2.5"
-                >
+                  class="review-rating mt-6 flex items-center justify-center space-x-2.5">
                   <img src="images/icons/star.svg" alt="" />
                   <img src="images/icons/star.svg" alt="" />
                   <img src="images/icons/star.svg" alt="" />
@@ -405,8 +370,7 @@
                   experiences & engage your users. We build .
                 </p>
                 <div
-                  class="review-rating mt-6 flex items-center justify-center space-x-2.5"
-                >
+                  class="review-rating mt-6 flex items-center justify-center space-x-2.5">
                   <img src="images/icons/star.svg" alt="" />
                   <img src="images/icons/star.svg" alt="" />
                   <img src="images/icons/star.svg" alt="" />
@@ -427,8 +391,7 @@
                   experiences & engage your users. We build .
                 </p>
                 <div
-                  class="review-rating mt-6 flex items-center justify-center space-x-2.5"
-                >
+                  class="review-rating mt-6 flex items-center justify-center space-x-2.5">
                   <img src="images/icons/star.svg" alt="" />
                   <img src="images/icons/star.svg" alt="" />
                   <img src="images/icons/star.svg" alt="" />
@@ -440,8 +403,7 @@
           </div>
           <!-- If we need pagination -->
           <div
-            class="swiper-pagination reviews-carousel-pagination !bottom-0"
-          ></div>
+            class="swiper-pagination reviews-carousel-pagination !bottom-0"></div>
         </div>
       </div>
     </div>
@@ -453,8 +415,7 @@
 <section class="px-5 py-20 xl:py-[120px]">
   <div class="container">
     <div
-      class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-[30px] pb-[75px] pt-16"
-    >
+      class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-[30px] pb-[75px] pt-16">
       <div class="lg:col-11">
         <div class="row">
           <div class="lg:col-7">

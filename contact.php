@@ -1,5 +1,5 @@
 <?php
-include './function.php';  
+include './function.php';
 
 $errors = [];
 
@@ -52,6 +52,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     }
 }
 
-$view_blade = "./contact.blade.php";  
-include './layouts/default.php'; 
-?>
+$view_blade = "./contact.blade.php";
+include './layouts/default.php';

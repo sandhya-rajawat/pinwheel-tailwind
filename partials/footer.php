@@ -1,3 +1,5 @@
+
+
 <footer class="footer bg-theme-light/50">
     <div class="container">
         <div class="row gx-5 pb-10 pt-[52px]">
@@ -16,7 +18,7 @@
                 <p>themefisher@gmail.com</p>
                 <ul class="social-icons mt-4 lg:mt-6">
                     <li>
-                        <a href="">
+                        <a href="<?= $socialLinks['facebook'] ?>" target="_blank">
                             <svg
                                 width="19"
                                 height="21"
@@ -30,7 +32,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+
+                    <a href="<?= $socialLinks['twitter'] ?>" target="_blank">
+
                             <svg
                                 width="19"
                                 height="15"
@@ -44,7 +48,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        
+                    <a href="<?= $socialLinks['linkedin'] ?>" target="_blank">
+             
                             <svg
                                 width="19"
                                 height="16"
@@ -58,7 +64,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="<?= $socialLinks['skype'] ?>" target="_blank">
                             <svg
                                 width="19"
                                 height="18"
