@@ -57,6 +57,11 @@
             </li>
             <li class="nav-item">
                 <a href="<?php
+                            echo get_url('blog-add.php');
+                            ?>" class="nav-link">Blog Add</a>
+            </li>
+            <li class="nav-item">
+                <a href="<?php
                             echo get_url('features.php');
                             ?>" class="nav-link">Features</a>
             </li>

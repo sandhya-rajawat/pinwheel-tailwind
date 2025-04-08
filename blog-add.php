@@ -1,10 +1,10 @@
 <?php
 include './function.php';
 
-// // Check if the user is NOT logged in
-// if (!isset($_SESSION['user_id'])) {
-//     redirect('signin.php');
-// }
+// Check if the user is NOT logged in
+if (!isset($_SESSION['user_id'])) {
+    redirect('signin.php');
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     // Get the form inputs
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
         if ($con) {
             $stmt = $con->prepare("INSERT INTO blogs (title, thumbnail, description, tags, status, user_id) VALUES (?, ?, ?, ?, ?, ?)");
-            
+
             if ($stmt === false) {
                 $errors['database'] = "Error preparing the statement: " . $con->error;
             } else {
@@ -89,4 +89,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 // Load the Blade view
 $view_blade = "./blog-add.blade.php";
 include './layouts/default.php';
-?>

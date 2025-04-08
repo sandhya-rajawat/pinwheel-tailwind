@@ -41,11 +41,15 @@
       </h1>
     </div>
     <h2 class="h4 mb-4">Featured Posts</h2>
+    
+    
   </div>
 </section>
 
 <!-- Blog Section -->
+ 
 <?php if (!empty($blogs)) { ?>
+
   <section class="section pt-0">
     <div class="container mx-auto max-w-screen-xl px-4">
       <div class="featured-posts flex flex-wrap gap-8">
@@ -55,18 +59,11 @@
               <img id="image" class="card-img object-cover rounded-lg" src="./uploads/<?= $blog['thumbnail']; ?>" alt="Blog Image">
 
               <div class="card-content p-3">
-                <!-- TAGS -->
-                <div class="card-tags mb-2">
-                  <?php if (!empty($blog['tags'])):?>
-                    <?php foreach (explode(',', $blog['tags']) as $tag): ?>
-                      <a href="?tag=<?= urlencode(trim($tag)) ?>"
-                         class="inline-block bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full mr-1 hover:bg-green-200">
-                        #<?= htmlspecialchars(trim($tag)) ?>
-                      </a>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                </div>
-
+              <div class="card-tags">
+              <a class="tag" href="#">Development</a>
+             
+            </div>
+           
                 <!-- Title -->
                 <h3 class="h4 card-title font-semibold text-lg text-gray-800 mb-2">
                   <a href="blog-detail.php?id=<?= $blog['id']; ?>">
@@ -78,6 +75,19 @@
                 <p class="text-md text-gray-700 mb-4">
                   <?= strlen($blog['description']) > 70 ? htmlspecialchars(substr($blog['description'], 0, 70)) . "..." : htmlspecialchars($blog['description']) ?>
                 </p>
+                  <!-- TAGS -->
+                  <div class="card-tags mb-2">
+                  <?php if (!empty($blog['tags'])):?>
+                    <?php foreach (explode(',', $blog['tags']) as $tag): ?>
+                      <a href="?tag=<?= urlencode(trim($tag)) ?>"
+                         class="inline-block bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full mr-1 hover:bg-green-200">
+                        #
+                        <?= htmlspecialchars(trim($tag)) ?>
+                      </a>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+
 
                 <!-- Footer: Dates -->
                 <div class="card-footer mt-4 flex space-x-4 text-xs text-[#666]">
@@ -93,6 +103,7 @@
               </div>
             </div>
           </div>
+          
         <?php endforeach; ?>
       </div>
     </div>
