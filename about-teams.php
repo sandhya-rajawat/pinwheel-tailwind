@@ -3,15 +3,17 @@
 include './function.php';
 
 // Uncomment this if login is required
-// if(!isset($_SESSION['team_id'])){
-//   redirect('signin.php');
-// }
+if (!isset($_SESSION['user_id'])) {
+  redirect('signin.php');
+}
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
   $name = trim($_POST['name']);
   $designation = trim($_POST['designation']);
   $sorting = trim($_POST['sorting']);
-  // $team_id = $_SESSION['team_id'];
+  $user_id = $_SESSION['user_id'];
 
   $photo = null;
   $errors = [];
@@ -61,13 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     $con = db_connect();
 
     if ($con) {
-      $stmt = $con->prepare("INSERT INTO teams (name, photo, designation, sorting) VALUES (?, ?, ?, ?)");
+      $stmt = $con->prepare("INSERT INTO teams (name, photo, designation, sorting,user_id  ) VALUES (?, ?, ?, ?,?)");
 
 
       if ($stmt === false) {
         $errors['database'] = "Error preparing the statement: " . $con->error;
       } else {
-        $stmt->bind_param("ssss", $name, $photo, $designation, $sorting);
+        $stmt->bind_param("ssssi", $name, $photo, $designation, $sorting, $user_id);
 
         if ($stmt->execute()) {
           session_flash('success', 'Team member added successfully!');
