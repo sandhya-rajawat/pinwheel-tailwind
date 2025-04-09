@@ -1,9 +1,6 @@
 <?php
 
 include './function.php';
-
-
-
 // Check if the user is NOT logged in
 if (!isset($_SESSION['user_id'])) {
     redirect('signin.php');
@@ -69,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 $errors['database'] = "Error preparing the statement: " . $con->error;
             } else {
                 $stmt->bind_param("sssi",$image, $title, $description,$user_id);
-                // $user_id
+                
                 if ($stmt->execute()) {
                     session_flash('success', 'Competitive salary added successfully!');
                     redirect('career.php');

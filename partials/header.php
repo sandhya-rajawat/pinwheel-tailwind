@@ -90,6 +90,14 @@
                         <a href="about-info.php" class="nav-dropdown-link">Team_Features</a>
                       
                     </li>
+                    <li class="nav-dropdown-item">
+                        <a href="career-update.php" class="nav-dropdown-link">Career_Update</a>
+                      
+                    </li>
+                    <li class="nav-dropdown-item">
+                        <a href="career-benefits.php" class="nav-dropdown-link">Career_benefits</a>
+                      
+                    </li>
                    
                     
                 </ul>
@@ -105,7 +113,7 @@
                 <ul
                     class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                     <li class="nav-dropdown-item">
-                        <a href="career.html" class="nav-dropdown-link">Career</a>
+                        <a href="career.php" class="nav-dropdown-link">Career</a>
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="career-single.html" class="nav-dropdown-link">Career Single</a>
