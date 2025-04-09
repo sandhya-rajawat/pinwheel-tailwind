@@ -48,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             }
         }
     }
-
     // Validation for Title and Description
     if (empty($title)) {
         $errors['title'] = "Title is required.";
