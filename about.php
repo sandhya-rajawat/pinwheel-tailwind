@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
 
 // Fetch all rules from teams_rules
 $sql2 = "SELECT * FROM teams_rules";
-$teams_result = $con->query($sql2); // ✅ using $sql2 here!
+$teams_result = $con->query($sql2); 
 if ($teams_result->num_rows > 0) {
   $teams_blog = $teams_result->fetch_all(MYSQLI_ASSOC);
 } else {
