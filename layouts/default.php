@@ -49,7 +49,7 @@
         href="https://fonts.googleapis.com/css2?family=<%= fontSecondary %>&display=swap"
         rel="stylesheet" />
 
- 
+
     <link rel="stylesheet" href="plugins/swiper/swiper-bundle.css" />
 
 
@@ -65,8 +65,10 @@
     include_once './partials/header.php';
     render_flash();
     include_once  $view_blade;
+    $socialLinks = getSocialLinks();
+
     include_once './partials/footer.php';
-  ?>
+    ?>
 </body>
 
 </html>

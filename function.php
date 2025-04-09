@@ -4,17 +4,30 @@ ini_set('display_errors', 1);
 include './database.php';
 include_once 'flash.php';
 
-function get_url($file_name) {
+function get_url($file_name)
+{
   $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
   $host = $_SERVER['HTTP_HOST'];
   $path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
   return "$protocol://$host$path/$file_name";
 }
-function redirect($url) {
-  header("Location: $url");  
-  exit(); 
+
+function redirect($url)
+{
+  header("Location: $url");
+  exit();
 }
+// footer
+function getSocialLinks()
+{
+   $conn=  db_connect();
+       $sql = "SELECT * FROM socials ";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        return $result->fetch_assoc();
+    }
 
 
-?>
+}
 

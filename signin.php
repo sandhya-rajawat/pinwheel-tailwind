@@ -1,6 +1,7 @@
 <?php
 include './function.php';
 
+
 $errors = []; 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $email = trim($_POST['email']);
@@ -25,6 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $user = $result->fetch_assoc();
 
     if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id']=$user['id'];
+        $_SESSION['user_name']=$user['fullname'];
      header("Location: index.php");
         exit();
     } else {
