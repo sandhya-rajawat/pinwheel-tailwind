@@ -5,18 +5,18 @@ include './function.php';
 
 
 // Check if the user is NOT logged in
-// if (!isset($_SESSION['user_id'])) {
-//     redirect('signin.php');
-// }
+if (!isset($_SESSION['user_id'])) {
+    redirect('signin.php');
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     // Get the form inputs
     $title = trim($_POST['title']);
     $description = trim($_POST['description']);
   
-    // $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'];
 
-    // Thumbnail Upload logic
+    // image Upload logic
     $image = null;
     $errors = [];
 
@@ -62,13 +62,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $con = db_connect();
 
         if ($con) {
-            $stmt = $con->prepare("INSERT INTO career_benefits(image,title , description) VALUES (?, ?, ?)");
-//   user_id
+            $stmt = $con->prepare("INSERT INTO career_benefits(image,title , description, user_id) VALUES (?, ?, ?,?)");
+
             if ($stmt === false) {
                 $errors['database'] = "Error preparing the statement: " . $con->error;
             } else {
-                $stmt->bind_param("sss",$image, $title, $description);
-                // $user_id
+                $stmt->bind_param("sssi",$image, $title, $description, $user_id);
+                
                 if ($stmt->execute()) {
                     session_flash('success', 'Competitive salary added successfully!');
                     redirect('career.php');
