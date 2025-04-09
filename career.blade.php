@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="leading-none text-dark">
-          <span class="text-sm leading-none">/ Career</span>
+          <span class="text-sm leading-none">Career</span>
         </li>
       </ul>
     </div>
