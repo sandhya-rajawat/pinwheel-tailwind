@@ -98,6 +98,14 @@
                         <a href="career-benefits.php" class="nav-dropdown-link">Career_benefits</a>
                       
                     </li>
+                    <li class="nav-dropdown-item">
+                        <a href="career-view.php" class="nav-dropdown-link">Career_F&Q</a>
+                      
+                    </li>
+                    <li class="nav-dropdown-item">
+                        <a href="career-single-apply.php" class="nav-dropdown-link">Add_Job</a>
+                      
+                    </li>
                    
                     
                 </ul>
@@ -116,7 +124,7 @@
                         <a href="career.php" class="nav-dropdown-link">Career</a>
                     </li>
                     <li class="nav-dropdown-item">
-                        <a href="career-single.html" class="nav-dropdown-link">Career Single</a>
+                        <a href="career-single.php" class="nav-dropdown-link">Career Single</a>
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="integrations.html" class="nav-dropdown-link">Integrations</a>
