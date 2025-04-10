@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="page-hero-content mx-auto max-w-[768px] text-center">
-      <h1 class="mb-5 mt-8">Add New Blog</h1>
+      <h1 class="mb-5 mt-8">Add New Media</h1>
     </div>
   </div>
 </section>
@@ -38,7 +38,7 @@
   <div class="container flex flex-col items-center justify-center">
     <!-- Form Section -->
     <div class="md:col-6 md:order-1">
-      <form class="lg:max-w-[484px] w-full" action="./blog-add.php" method="POST" enctype="multipart/form-data">
+      <form class="lg:max-w-[484px] w-full" action="./integrations-details.php" method="POST" enctype="multipart/form-data">
         <!-- Title Input -->
         <div class="form-group mb-5">
           <label class="form-label" for="name">Title</label>
@@ -50,18 +50,17 @@
             placeholder="Enter Your Title"
             required />
         </div>
-
-        <!-- Thumbnail Input -->
         <div class="form-group mb-5">
-          <label class="form-label" for="thumbnail">Thumbnail </label>
+          <label class="form-label" for="name">Content</label>
           <input
-            type="file"
-            name="thumbnail"
-            accept="image/jpeg, image/png, image/gif"
             class="form-control w-full"
-            id="thumbnail"
+            type="text"
+            id="name"
+            name="content"
+            placeholder="Enter Your Content"
             required />
         </div>
+
 
         <!-- Description Textarea -->
         <div class="form-group mb-5">
@@ -71,35 +70,38 @@
             required
             class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-24 resize-none"></textarea>
         </div>
-
-        <!-- Status Dropdown -->
-        <div class="form-group mb-5">
-          <label class="form-label">Status:</label>
-          <select
-            name="status"
-            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
-            <option value="draft">Draft</option>
-            <option value="published">Published</option>
-          </select>
-        </div>
-        <!-- Tags Input -->
+<!-- url -->
 <div class="form-group mb-5">
-  <label class="form-label" for="tags">Tags (comma-separated):</label>
-  <input
-    class="form-control w-full"
-    type="text"
-    id="tags"
-    name="tags"
-    placeholder="e.g. PHP, Tailwind, Blog, News Title,Content"
-    required />
-</div>
+          <label class="form-label" for="name">URL</label>
+          <input
+            class="form-control w-full"
+            type="text"
+            id="name"
+            name="url"
+            placeholder="Enter Your Media url"
+            required />
+        </div>
+        <!-- Thumbnail Input -->
+        <div class="form-group mb-5">
+          <label class="form-label" for="image">Thumbnail </label>
+          <input
+            type="file"
+            name="image"
+            accept="image/jpeg, image/png, image/gif"
+            class="form-control w-full"
+            id="image"
+            required />
+        </div>
+
+
+
 
 
         <!-- Submit Button -->
         <input
           class="btn btn-primary block w-full"
           type="submit"
-          value="Publish Blog"
+          value="Add Media"
           name="submit" />
       </form>
     </div>

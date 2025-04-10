@@ -107,6 +107,12 @@
                       
                     </li>
                    
+                    <li class="nav-dropdown-item">
+                        <a href='integrations-details.php'
+                        class="nav-dropdown-link">intergrations_details</a>
+                      
+                    </li>
+                   
                     
                 </ul>
             </li>
@@ -127,7 +133,7 @@
                         <a href="career-single.php" class="nav-dropdown-link">Career Single</a>
                     </li>
                     <li class="nav-dropdown-item">
-                        <a href="integrations.html" class="nav-dropdown-link">Integrations</a>
+                        <a href="integrations.php" class="nav-dropdown-link">Integrations</a>
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="integration-single.html" class="nav-dropdown-link">Integration Single</a>
