@@ -18,13 +18,13 @@
                 </p>
             </div>
 
-            <!-- Column 2: Social Icons -->
+            <!-- Social Icons -->
             <div class="col-12 mt-12 md:col-6 lg:col-3">
                 <h6>Socials</h6>
                 <p>themefisher@gmail.com</p>
               
                 <?php if (!empty($socials)) { 
-                    // Debug output; remove these lines once debugging is complete:
+                   
                    
                 ?>
                     <ul class="social-icons mt-4 lg:mt-6 flex flex-wrap gap-3">
