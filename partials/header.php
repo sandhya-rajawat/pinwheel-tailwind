@@ -60,8 +60,12 @@
                     </svg>
                 </span>
                 <ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
+                
                     <li class="nav-dropdown-item">
                         <a href="blog-add.php" class="nav-dropdown-link">Blog Add</a>
+                    </li>
+                    <li class="nav-dropdown-item">
+                        <a href="social-icon.php" class="nav-dropdown-link">Social-Media </a>
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="about-teams.php" class="nav-dropdown-link">Team Add</a>

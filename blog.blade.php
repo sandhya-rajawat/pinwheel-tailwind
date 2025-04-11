@@ -50,6 +50,7 @@
  
 <?php if (!empty($blogs)) { ?>
 
+
   <section class="section pt-0">
     <div class="container mx-auto max-w-screen-xl px-4">
       <div class="featured-posts flex flex-wrap gap-8">

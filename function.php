@@ -17,17 +17,25 @@ function redirect($url)
   header("Location: $url");
   exit();
 }
-// footer
+// footer-social-icon..................
 function getSocialLinks()
 {
-   $conn=  db_connect();
-       $sql = "SELECT * FROM socials ";
-    $result = $conn->query($sql);
 
-    if ($result && $result->num_rows > 0) {
-        return $result->fetch_assoc();
+  $conn = db_connect();
+  $sql = "SELECT * FROM socials";
+  $result = $conn->query($sql);
+  $social = [];
+  if ($result && $result->num_rows > 0) {
+  $social = $result->fetch_all(MYSQLI_ASSOC);
+  foreach ($social as &$item) {
+      if (isset($item['url'])) {
+        $item['is_valid'] = filter_var($item['url'], FILTER_VALIDATE_URL) ? true : false;
+      } else {
+        $item['is_valid'] = false;
+      }
     }
-
-
+    unset($item);
+  }
+  $conn->close();
+  return $social;
 }
-
