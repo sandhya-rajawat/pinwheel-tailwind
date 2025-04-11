@@ -1,5 +1,4 @@
 <?php
-
 include './function.php';
 
 // Check if the user is NOT logged in
@@ -11,9 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     // Get the form inputs
     $title = trim($_POST['title']);
     $description = trim($_POST['description']);
+    $content = trim($_POST['content']);
+    $url = trim($_POST['url']);
     $user_id = $_SESSION['user_id'];
 
-    // Image upload logic
+    // Thumbnail Upload logic
     $image = null;
     $errors = [];
 
@@ -37,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         } elseif ($_FILES["image"]["size"] > 5000000) {
             $errors['image'] = "File size must be less than 5MB.";
         } else {
+            // Move the uploaded file to the target directory
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                 $image = $file_name;
             } else {
@@ -45,34 +47,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         }
     }
 
-    // Validation
+    // Validation for Title and Description
     if (empty($title)) {
         $errors['title'] = "Title is required.";
     }
-
     if (empty($description)) {
         $errors['description'] = "Description is required.";
     }
+    if (empty($url)) {
+      $errors['url'] = "url is required.";
+  }
+    if (empty($content)) {
+        $errors['content'] = "content is required.";
+    }
+   
 
-    // Insert if no errors
+    // Insert into DB if no errors
     if (empty($errors)) {
         $con = db_connect();
 
         if ($con) {
-            $stmt = $con->prepare("INSERT INTO career_benefits (image, title, description, user_id) VALUES (?, ?, ?, ?)");
+            $stmt = $con->prepare("INSERT INTO integrations (title,description,image,url, user_id,content) VALUES (?, ?, ?, ?,?,?)");
 
             if ($stmt === false) {
                 $errors['database'] = "Error preparing the statement: " . $con->error;
             } else {
-                $stmt->bind_param("sssi", $image, $title, $description, $user_id);
+                $stmt->bind_param("ssssis", $title,  $description, $image,$url, $user_id,$content);
 
                 if ($stmt->execute()) {
-                    session_flash('success', 'Competitive salary added successfully!');
-                    redirect('career.php');
+                    session_flash('success', 'Media added successfully!');
+                    redirect('integrations.php');
                 } else {
                     $errors['database'] = "Error inserting data: " . $stmt->error;
                 }
-
                 $stmt->close();
             }
 
@@ -83,6 +90,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     }
 }
 
-// Load the view
-$view_blade = "./career-benefits.blade.php";
+
+$view_blade = "./intergrations-details.blade.php";
 include './layouts/default.php';
