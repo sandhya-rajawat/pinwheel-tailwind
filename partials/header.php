@@ -1,9 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-include_once './function.php';
-?>
 
 <header class="header">
     <nav class="navbar container">
