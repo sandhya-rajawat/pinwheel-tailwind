@@ -65,7 +65,7 @@
     include_once './partials/header.php';
     render_flash();
     include_once  $view_blade;
-    $socialLinks = getSocialLinks();
+    $socials = getSocialLinks();
 
     include_once './partials/footer.php';
     ?>

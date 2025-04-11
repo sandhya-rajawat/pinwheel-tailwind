@@ -20,14 +20,27 @@ function redirect($url)
 // footer
 function getSocialLinks()
 {
-   $conn=  db_connect();
-       $sql = "SELECT * FROM socials ";
+    // Connect to the database
+    $conn = db_connect();
+    $sql = "SELECT * FROM socials";
     $result = $conn->query($sql);
 
+    $social = [];
     if ($result && $result->num_rows > 0) {
-        return $result->fetch_assoc();
+        // Get all rows as associative arrays
+        $social = $result->fetch_all(MYSQLI_ASSOC);
+        
+        // Loop through and validate each URL
+        foreach ($social as &$item) {
+            if (isset($item['url'])) {
+                $item['is_valid'] = filter_var($item['url'], FILTER_VALIDATE_URL) ? true : false;
+            } else {
+                $item['is_valid'] = false;
+            }
+        }
+        unset($item); // break the reference
     }
-
-
+    
+    $conn->close();
+    return $social;
 }
-
