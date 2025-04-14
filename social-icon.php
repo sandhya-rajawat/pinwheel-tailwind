@@ -1,9 +1,28 @@
 <?php
 include './function.php';
-
-
 $errors = [];
+$saved_links = [];
 
+// Fetch existing social links
+$con = db_connect();
+if ($con) {
+    $result = $con->query("
+        SELECT type, url FROM socials
+        WHERE id IN (
+            SELECT MAX(id) FROM socials GROUP BY type
+        )
+    ");
+
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $saved_links[$row['type']] = $row['url'];
+        }
+    }
+
+    $con->close();
+}
+
+//  Handle form submission............................
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $urls = [
         'facebook'  => trim($_POST['facebook']),
@@ -15,7 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $con = db_connect();
 
     if ($con) {
-        $stmt = $con->prepare("INSERT INTO socials (type, url) VALUES (?, ?)");
+        // Prepare insert/update statement
+        $stmt = $con->prepare("
+            INSERT INTO socials (type, url)
+            VALUES (?, ?)
+            ON DUPLICATE KEY UPDATE url = VALUES(url)
+        ");
 
         if ($stmt === false) {
             $errors['database'] = "Prepare failed: " . $con->error;
@@ -24,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 if (!empty($url)) {
                     $stmt->bind_param("ss", $type, $url);
                     if (!$stmt->execute()) {
-                        $errors['insert'][$type] = "Failed to insert $type: " . $stmt->error;
+                        $errors['insert'][$type] = "Failed to save $type: " . $stmt->error;
                     }
                 }
             }
@@ -35,13 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $con->close();
 
         if (empty($errors)) {
-            session_flash('success', 'Social links added successfully!');
+            session_flash('success', 'Social links saved successfully!');
             redirect('footer.php');
         }
     } else {
         $errors['database'] = "Database connection failed.";
     }
 }
-
 $view_blade = "./social-icon.blade.php";
 include './layouts/default.php';

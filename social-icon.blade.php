@@ -43,51 +43,54 @@
         <div class="form-group mb-5">
           <label class="form-label" for="name">Facebook</label>
           <input
-            class="form-control w-full"          
+            class="form-control w-full"
             type="url"
             id="url"
             name="facebook"
             placeholder="Facebook URL"
-           required />
+            value="<?= isset($saved_links['facebook']) ? htmlspecialchars($saved_links['facebook']) : '' ?>"
+            required />
         </div>
+
 
 
         <div class="form-group mb-5">
           <label class="form-label" for="name">Instagram</label>
           <input
-            class="form-control w-full"          
+            class="form-control w-full"
             type="url"
             id="url"
             name="instagram"
             placeholder="Instagram  URL"
-           required />
+            value="<?= isset($saved_links['instagram']) ? htmlspecialchars($saved_links['instagram']) : '' ?>"
+            required />
         </div>
-        
+
         <div class="form-group mb-5">
           <label class="form-label" for="name">Twitter</label>
           <input
-            class="form-control w-full"          
+            class="form-control w-full"
             type="url"
             id="url"
             name="twitter"
             placeholder="Twitter  URL"
-           required />
-        </div>
-        
+            value="<?= isset($saved_links['twitter']) ? htmlspecialchars($saved_links['twitter']) : '' ?>"
 
-      
-        
+            required />
+        </div>
         <div class="form-group mb-5">
           <label class="form-label" for="name">Linkedlin</label>
           <input
-            class="form-control w-full"          
+            class="form-control w-full"
             type="url"
             id="url"
             name="linkedin"
             placeholder="Linkedlin  URL"
-           required />
+            value="<?= isset($saved_links['linkedin']) ? htmlspecialchars($saved_links['linkedin']) : '' ?>"
+
+            required />
         </div>
-       
+
 
 
         <!-- Submit Button -->
