@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         } else {
             foreach ($urls as $type => $url) {
                 if (!empty($url)) {
-                    $stmt->bind_param("ss", $type, $url);
+                    $stmt->bind_param("ss", $type, $url); // bind values
                     if (!$stmt->execute()) {
                         $errors['insert'][$type] = "Failed to save $type: " . $stmt->error;
                     }
