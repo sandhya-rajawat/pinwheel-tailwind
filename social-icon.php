@@ -1,6 +1,7 @@
 <?php
 include './function.php';
 $con = db_connect();
+
 function save_social_link($type, $url, $con)
 {
 
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $con->close();
 
         session_flash('success', 'Social links saved successfully!');
-        redirect('footer.php');
+        redirect('social-icon.php');
     } else {
         $errors['database'] = "Database connection failed.";
     }
@@ -65,7 +66,8 @@ if ($con) {
         while ($row = $result->fetch_assoc()) {
             $saved_links[$row['type']] = $row['url'];
         }
-    }$con->close();
+    }
+    $con->close();
 }
 
 $view_blade = "./social-icon.blade.php";
