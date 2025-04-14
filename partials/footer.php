@@ -13,7 +13,7 @@
             <?php if (!empty($socials)) { ?>
                 <div class="col-12 mt-12 md:col-6 lg:col-3">
                     <h6>Socials</h6>
-                    <p>themefisher@gmail.com</p>
+                    <p>pinwheel900@gmail.com</p>
 
 
                     <ul class="social-icons mt-4 lg:mt-6 flex gap-3">
