@@ -41,40 +41,53 @@
       <form class="lg:max-w-[484px] w-full" action="./social-icon.php" method="POST" enctype="multipart/form-data">
         <!-- icon Input -->
         <div class="form-group mb-5">
-          <label class="form-label" for="name">Link</label>
+          <label class="form-label" for="name">Facebook</label>
           <input
-            class="form-control w-full"
-            type="text"
+            class="form-control w-full"          
+            type="url"
             id="url"
-            name="url"
-            placeholder="Enter Your New  Url"
-            required />
+            name="facebook"
+            placeholder="Facebook URL"
+           required />
         </div>
+
+
         <div class="form-group mb-5">
-          <label class="form-label" for="type">Type</label>
+          <label class="form-label" for="name">Instagram</label>
           <input
-            class="form-control w-full"
-            type="text"
-            id="type"
-            name="type"
-            placeholder="Enter Your New  Type"
-            required />
+            class="form-control w-full"          
+            type="url"
+            id="url"
+            name="instagram"
+            placeholder="Instagram  URL"
+           required />
         </div>
-
-        <!-- icon Input -->
+        
         <div class="form-group mb-5">
-          <label class="form-label" for="icon">Icon </label>
+          <label class="form-label" for="name">Twitter</label>
           <input
-            type="file"
-            name="icon"
-            accept="image/jpeg, image/png, image/gif"
-            class="form-control w-full"
-            id="icon"
-            required />
+            class="form-control w-full"          
+            type="url"
+            id="url"
+            name="twitter"
+            placeholder="Twitter  URL"
+           required />
         </div>
+        
 
-
-
+      
+        
+        <div class="form-group mb-5">
+          <label class="form-label" for="name">Linkedlin</label>
+          <input
+            class="form-control w-full"          
+            type="url"
+            id="url"
+            name="linkedin"
+            placeholder="Linkedlin  URL"
+           required />
+        </div>
+       
 
 
         <!-- Submit Button -->

@@ -98,6 +98,7 @@ if(!empty($integration)){
     <div class="row mt-10 integration-tab-items">
 
     <?php foreach ($integration as $integrations): ?>
+    
       <div class="mb-8 md:col-6 lg:col-4 integration-tab-item" data-groups='["social"]'>
         <div class="rounded-xl bg-white px-10 pt-11 pb-8 shadow-lg">
           <div class="integration-card-head flex items-center space-x-4">
