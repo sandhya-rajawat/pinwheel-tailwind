@@ -22,7 +22,7 @@ if ($con) {
     $con->close();
 }
 
-//  Handle form submission............................
+//  Handle form submission...............................
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $urls = [
         'facebook'  => trim($_POST['facebook']),
