@@ -2,7 +2,6 @@
 include './function.php';
 function save_social_link($type, $url, $con)
 {
-    if (empty($url)) return;
 
     $check_stmt = $con->prepare("SELECT id FROM socials WHERE type = ?");
     $check_stmt->bind_param("s", $type);
