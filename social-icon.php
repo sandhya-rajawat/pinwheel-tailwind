@@ -4,28 +4,24 @@ function save_social_link($type, $url, $con)
 {
     if (empty($url)) return;
 
-    $check = mysqli_query($con, "SELECT id FROM socials WHERE type = '$type'");
-    if (mysqli_num_rows($check) > 0) {
-        mysqli_query($con, "UPDATE socials SET url = '$url' WHERE type = '$type'");
+    $check_stmt = $con->prepare("SELECT id FROM socials WHERE type = ?");
+    $check_stmt->bind_param("s", $type);
+    $check_stmt->execute();
+    $check_stmt->store_result();
+
+    if ($check_stmt->num_rows > 0) {
+        $update_stmt = $con->prepare("UPDATE socials SET url = ? WHERE type = ?");
+        $update_stmt->bind_param("ss", $url, $type);
+        $update_stmt->execute();
+        $update_stmt->close();
     } else {
-        mysqli_query($con, "INSERT INTO socials (type, url) VALUES ('$type', '$url')");
+        $insert_stmt = $con->prepare("INSERT INTO socials (type, url) VALUES (?, ?)");
+        $insert_stmt->bind_param("ss", $type, $url);
+        $insert_stmt->execute();
+        $insert_stmt->close();
     }
-}
 
-$errors = [];
-$saved_links = [];
-$con = db_connect();
-
-
-if ($con) {
-    $query = "SELECT * FROM socials";
-    $result = $con->query($query);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $saved_links[$row['type']] = $row['url'];
-        }
-    }
-    $con->close();
+    $check_stmt->close();
 }
 
 
