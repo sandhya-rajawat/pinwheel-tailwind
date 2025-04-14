@@ -48,7 +48,10 @@
             id="url"
             name="facebook"
             placeholder="Facebook URL"
-            value="<?= isset($saved_links['facebook']) ? htmlspecialchars($saved_links['facebook']) : '' ?>"
+            value="<?= isset($saved_links['facebook']) ? htmlspecialchars($saved_links['facebook']) : ''
+            
+        
+            ?>"
             required />
         </div>
 

@@ -1,5 +1,6 @@
 <?php
 include './function.php';
+$con = db_connect();
 function save_social_link($type, $url, $con)
 {
 
@@ -24,6 +25,9 @@ function save_social_link($type, $url, $con)
 }
 
 
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $urls = [
         'facebook'  => trim($_POST['facebook']),
@@ -32,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         'linkedin'  => trim($_POST['linkedin']),
     ];
 
-    $con = db_connect();
 
     if ($con) {
 
@@ -48,6 +51,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     } else {
         $errors['database'] = "Database connection failed.";
     }
+}
+
+
+
+
+// link fetch
+$saved_links = [];
+if ($con) {
+    $result = $con->query("SELECT * FROM socials");
+
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $saved_links[$row['type']] = $row['url'];
+        }
+    }$con->close();
 }
 
 $view_blade = "./social-icon.blade.php";
