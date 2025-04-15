@@ -16,3 +16,4 @@ if ($result->num_rows > 0) {
 $view_blade = "./blog.blade.php";
 include './layouts/default.php';
 $con->close();
+?>

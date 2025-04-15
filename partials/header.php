@@ -34,7 +34,7 @@
         <ul
             id="nav-menu"
             class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5">
-            
+
             <li class="nav-item">
                 <a href="<?php echo get_url('index.php'); ?>" class="nav-link active">Home</a>
             </li>
@@ -60,7 +60,7 @@
                     </svg>
                 </span>
                 <ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
-                
+
                     <li class="nav-dropdown-item">
                         <a href="blog-add.php" class="nav-dropdown-link">Blog Add</a>
                     </li>
@@ -87,6 +87,11 @@
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="integrations-details.php" class="nav-dropdown-link">Integrations Details</a>
+                    <li class="nav-dropdown-item">
+                        <a href="pricing-add.php" class="nav-dropdown-link">Price_Add</a>
+                    </li>
+                    <li class="nav-dropdown-item">
+                        <a href="pricing-detail.php" class="nav-dropdown-link">Price_F&Q</a>
                     </li>
                 </ul>
             </li>
@@ -109,11 +114,9 @@
                     <li class="nav-dropdown-item">
                         <a href="integrations.php" class="nav-dropdown-link">Integrations</a>
                     </li>
+
                     <li class="nav-dropdown-item">
-                        <a href="integration-single.html" class="nav-dropdown-link">Integration Single</a>
-                    </li>
-                    <li class="nav-dropdown-item">
-                        <a href="pricing.html" class="nav-dropdown-link">Pricing</a>
+                        <a href="pricing.php" class="nav-dropdown-link">Pricing</a>
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="changelogs.html" class="nav-dropdown-link">Changelogs</a>
