@@ -63,3 +63,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
 $view_blade = "./signup.blade.php";
 include './layouts/default.php';
+?>
