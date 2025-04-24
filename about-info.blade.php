@@ -40,7 +40,7 @@
     <div class="md:col-6 md:order-1">
       <form class="lg:max-w-[484px] w-full" action="./about-info.php" method="POST" enctype="multipart/form-data">
         <!-- name Input -->
-      <div class="form-group mb-5">
+        <div class="form-group mb-5">
           <label class="form-label" for="number">Number</label>
           <input
             class="form-control w-full"
@@ -72,13 +72,14 @@
             placeholder="Enter Your discription"
             required />
         </div>
-      
+
         <!-- Submit Button -->
         <input
           class="btn btn-primary block w-full"
           type="submit"
           value="Add core work"
           name="submit" />
+          <!-- jdnfkjdshfkjhf -->
       </form>
     </div>
   </div>
