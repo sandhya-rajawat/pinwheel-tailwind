@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="page-hero-content mx-auto max-w-[768px] text-center">
-      <h1 class="mb-5 mt-8">Add New core work</h1>
+      <h1 class="mb-5 mt-8">Add New Price</h1>
     </div>
   </div>
 </section>
@@ -38,48 +38,64 @@
   <div class="container flex flex-col items-center justify-center">
     <!-- Form Section -->
     <div class="md:col-6 md:order-1">
-      <form class="lg:max-w-[484px] w-full" action="./about-info.php" method="POST" enctype="multipart/form-data">
-        <!-- name Input -->
+      <form class="lg:max-w-[484px] w-full" action="./pricing-add.php" method="POST" enctype="multipart/form-data">
+        <!-- Title Input -->
         <div class="form-group mb-5">
-          <label class="form-label" for="number">Number</label>
-          <input
-            class="form-control w-full"
-            type="text"
-            id="name"
-            name="number"
-            placeholder="Enter Your number"
-            required />
-        </div>
-        <div class="form-group mb-5">
-          <label class="form-label" for="title">Title</label>
+          <label class="form-label" for="name">Title</label>
           <input
             class="form-control w-full"
             type="text"
             id="name"
             name="title"
-            placeholder="Enter Your title"
+            placeholder="Enter Your Title"
             required />
         </div>
-        <!-- Designation input -->
-
+        <!-- price Input -->
         <div class="form-group mb-5">
-          <label class="form-label" for="discription">Discription</label>
+          <label class="form-label" for="name">Price</label>
           <input
             class="form-control w-full"
             type="text"
             id="name"
-            name="discription"
-            placeholder="Enter Your discription"
+            name="price"
+            placeholder="Price Your Price"
             required />
         </div>
+
+        <!-- Content Textarea -->
+        <div class="form-group mb-5">
+          <label class="form-label" for="description">Content</label>
+          <textarea
+            name="content"
+            required
+            class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-24 resize-none"></textarea>
+        </div>
+        <div class="form-group mb-5">
+          <label class="form-label" for="name">Text</label>
+          <input
+            class="form-control w-full"
+            type="text"
+            id="name"
+            name="text"
+            placeholder="Enter Your text "
+            required />
+
+            <!-- Content Textarea -->
+        <div class="form-group mb-5">
+          <label class="form-label" for="description">Description</label>
+          <textarea
+            name="description"
+            required
+            class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-24 resize-none"></textarea>
+        </div>
+       
 
         <!-- Submit Button -->
         <input
           class="btn btn-primary block w-full"
           type="submit"
-          value="Add core work"
+          value="Price-Add"
           name="submit" />
-          <!-- jdnfkjdshfkjhfmdkdekomdwsdmskdm -->
       </form>
     </div>
   </div>
