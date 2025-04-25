@@ -79,7 +79,7 @@
           type="submit"
           value="Add core work"
           name="submit" />
-          <!-- jdnfkjdshfkjhfmdkdekomdwsdmskdm -->
+
       </form>
     </div>
   </div>
