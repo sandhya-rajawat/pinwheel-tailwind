@@ -17,6 +17,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     } elseif (strlen($password) < 8) {
         $errors['password'] = " Password must be at least 8 characters.";
     }
+
+    $image = null;
+    $errors = [];
+
+    if (!empty($_FILES['image']['name'])) {
+        $target_dir = "./uploads";
+
+        // Create uploads directory if it doesn't exist
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+
+        $file_name = time() . "_" . basename($_FILES["image"]["name"]);
+        $target_file = $target_dir . "/" . $file_name;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Valid extensions
+        $valid_extensions = ["jpg", "jpeg", "png", "gif", "webp", "avif"];
+
+        if (!in_array($imageFileType, $valid_extensions)) {
+            $errors['image'] = "Only JPG, JPEG, PNG, GIF, WEBP & AVIF files are allowed.";
+        } elseif ($_FILES["image"]["size"] > 5000000) {
+            $errors['image'] = "File size must be less than 5MB.";
+        } else {
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                $image = $file_name;
+            } else {
+                $errors['image'] = "Error uploading file.";
+            }
+        }
+    }
     if (empty($errors)) {
         $con = db_connect();
 
@@ -35,10 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
                 //  **Correct SQL Query**
-                $stmt = $con->prepare("INSERT INTO user (fullname, email, password) VALUES (?, ?, ?)");
+                $stmt = $con->prepare("INSERT INTO user (fullname, email, password ,image) VALUES (?, ?, ?,?)");
 
                 if ($stmt) {
-                    $stmt->bind_param("sss", $name, $email, $hashed_password);
+                    $stmt->bind_param("ssss", $name, $email,  $hashed_password,$image);
                     if ($stmt->execute()) {
 
                       
