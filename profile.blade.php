@@ -1,9 +1,4 @@
-<style>
-.image{
 
-}
-
-</style>
 
 <!-- Profile Page Layout -->
  
@@ -25,10 +20,10 @@
       </div>
     </div>
 
-    <!-- <div>
+    <div>
       <label class="font-medium">Password:</label>
       <p class="text-gray-700"><?= htmlspecialchars($password) ?: "Not provided" ?></p>
-    </div> -->
+    </div>
 
 
     <div>

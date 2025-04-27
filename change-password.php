@@ -2,10 +2,10 @@
 include './function.php'; 
 $conn = db_connect();
 
-// if (!isset($_SESSION['user_id'])) {
-//     header("Location: signin.php");
-//     exit;
-// }
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin.php");
+    exit;
+}
 $user_id = $_SESSION['user_id'];
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
