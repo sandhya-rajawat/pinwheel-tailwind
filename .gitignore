@@ -1,2 +1,1 @@
-uploads/git rm --cached -r uploads/
-git commit -m "Stop tracking uploads folder"
+uploads/
