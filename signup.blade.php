@@ -61,6 +61,37 @@
         <p class="error"><?= $errors['password'] ?></p>
     <?php endif; ?>
               </div>
+              <div class="form-group mt-4">
+                <label for="address" class="form-label">Address</label>
+                <input
+                  type="address"
+                  id="address"
+                  class="form-control"
+                  placeholder="Your address"
+                  name='address'
+                />
+
+
+                <?php if (isset($errors['address'])): ?>
+        <p class="error"><?= $errors['address'] ?></p>
+    <?php endif; ?>
+              </div>
+              
+              <div class="form-group mt-4">
+                <label for="phone" class="form-label">phone</label>
+                <input
+                  type="phone"
+                  id="phone"
+                  class="form-control"
+                  placeholder="Your phone"
+                  name='phone'
+                />
+
+
+                <?php if (isset($errors['address'])): ?>
+        <p class="error"><?= $errors['address'] ?></p>
+    <?php endif; ?>
+              </div>
               
               <div class="form-group mb-5">
           <label class="form-label" for="image">Image </label>

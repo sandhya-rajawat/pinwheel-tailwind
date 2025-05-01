@@ -3,7 +3,7 @@ include './function.php';
 $conn = db_connect();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: signin.php");
+    redirect("Location: signin.php");
     exit;
 }
 $user_id = $_SESSION['user_id'];
@@ -40,3 +40,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $view_blade = "./change-password.blade.php";
 include './layouts/dashbord.php';
+?>

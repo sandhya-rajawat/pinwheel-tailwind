@@ -11,6 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = " Valid email is required.";
     }
+    $phone = trim(htmlspecialchars($_POST["phone"]));
+    if (empty($phone)) {
+        $errors['phone'] = " phone is required.";
+    }
+
+    $address = trim(htmlspecialchars($_POST["address"]));
+    if (empty($address)) {
+        $errors['address'] = " address is required.";
+    }
     $password = trim($_POST["password"]);
     if (empty($password)) {
         $errors['password'] = " Password cannot be empty.";
@@ -67,17 +76,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
                 //  **Correct SQL Query**
-                $stmt = $con->prepare("INSERT INTO user (fullname, email, password ,image) VALUES (?, ?, ?,?)");
+                $stmt = $con->prepare("INSERT INTO user (fullname, email, password ,image,address,phone) VALUES (?, ?, ?,?,?,?)");
 
                 if ($stmt) {
-                    $stmt->bind_param("ssss", $name, $email,  $hashed_password,$image);
+                    $stmt->bind_param("sssssi", $name, $email, $hashed_password, $image, $address, $phone);
+
                     if ($stmt->execute()) {
 
-                      
+
                         session_flash('success', 'Registration successful!');
-                        $_SESSION['user_id']=$user['id'];
-                        $_SESSION['user_name']=$user['fullname'];
-                     header("Location: index.php");
+                        $_SESSION['user_id'] = $user['id'];
+                        $_SESSION['user_name'] = $user['fullname'];
+                        header("Location: index.php");
                         exit();
                     } else {
                         session_flash('error', ' Error saving your data. Try again.');
@@ -95,4 +105,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
 $view_blade = "./signup.blade.php";
 include './layouts/default.php';
-?>
