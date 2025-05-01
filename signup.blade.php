@@ -19,7 +19,7 @@
               >
             </div>
 
-            <form action="./signup.php" method="POST">
+            <form action="./signup.php" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="name" class="form-label">Full Name</label>
                 <input
@@ -47,7 +47,7 @@
     <?php endif; ?>
               </div>
               <div class="form-group mt-4">
-                <label for="password" class="form-label">Password........</label>
+                <label for="password" class="form-label">Password</label>
                 <input
                   type="password"
                   id="password"
@@ -55,10 +55,54 @@
                   placeholder="Your Password"
                   name='password'
                 />
+
+
                 <?php if (isset($errors['password'])): ?>
         <p class="error"><?= $errors['password'] ?></p>
     <?php endif; ?>
               </div>
+              <div class="form-group mt-4">
+                <label for="address" class="form-label">Address</label>
+                <input
+                  type="address"
+                  id="address"
+                  class="form-control"
+                  placeholder="Your address"
+                  name='address'
+                />
+
+
+                <?php if (isset($errors['address'])): ?>
+        <p class="error"><?= $errors['address'] ?></p>
+    <?php endif; ?>
+              </div>
+              
+              <div class="form-group mt-4">
+                <label for="phone" class="form-label">phone</label>
+                <input
+                  type="phone"
+                  id="phone"
+                  class="form-control"
+                  placeholder="Your phone"
+                  name='phone'
+                />
+
+
+                <?php if (isset($errors['address'])): ?>
+        <p class="error"><?= $errors['address'] ?></p>
+    <?php endif; ?>
+              </div>
+              
+              <div class="form-group mb-5">
+          <label class="form-label" for="image">Image </label>
+          <input
+            type="file"
+            name="image"
+            accept="image/jpeg, image/png, image/gif"
+            class="form-control w-full"
+            id="image"
+            required />
+        </div>
               <input
                 class="btn btn-primary mt-10 block w-full"
                 type="submit"
